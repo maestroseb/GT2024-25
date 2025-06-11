@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Interactivo | Grupo de Trabajo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        .gallery-item {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .filter-btn.active {
+            background-color: #0d9488; /* teal-600 */
+            color: white;
+            font-weight: 600;
+        }
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f5f9; /* slate-100 */
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background-color: #0d9488; /* teal-600 */
+            border-radius: 10px;
+            border: 2px solid #f1f5f9; /* slate-100 */
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-40">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-teal-700">Portafolio GT</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#introduccion" class="text-slate-600 hover:text-teal-600 transition-colors duration-200">Inicio</a>
+                <a href="#fase1" class="text-slate-600 hover:text-teal-600 transition-colors duration-200">Fase 1: Evaluación</a>
+                <a href="#fase2" class="text-slate-600 hover:text-teal-600 transition-colors duration-200">Fase 2: IA</a>
+                <a href="#galeria" class="text-slate-600 hover:text-teal-600 transition-colors duration-200">Galería de Recursos</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-slate-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2 bg-white">
+            <a href="#introduccion" class="block text-slate-600 hover:text-teal-600 mobile-link">Inicio</a>
+            <a href="#fase1" class="block text-slate-600 hover:text-teal-600 mobile-link">Fase 1: Evaluación</a>
+            <a href="#fase2" class="block text-slate-600 hover:text-teal-600 mobile-link">Fase 2: IA</a>
+            <a href="#galeria" class="block text-slate-600 hover:text-teal-600 mobile-link">Galería de Recursos</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+        <!-- Introduction Section -->
+        <section id="introduccion" class="text-center pt-8 mb-16 md:mb-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-teal-800 mb-4">Innovación en el Aula</h2>
+            <p class="max-w-3xl mx-auto text-slate-600 text-lg">
+                Este portafolio recoge las evidencias del grupo de trabajo durante el curso 2024-2025. El proyecto se ha centrado en dos áreas clave: la optimización de los procesos de evaluación mediante herramientas digitales y la exploración de la Inteligencia Artificial para la creación de recursos educativos personalizados y motivadores.
+            </p>
+        </section>
+
+        <!-- Phase 1 Section -->
+        <section id="fase1" class="mb-16 md:mb-24 pt-16 -mt-16">
+            <div class="text-center mb-12">
+                <span class="text-teal-600 font-semibold tracking-wider">FASE 1: 1º TRIMESTRE</span>
+                <h3 class="text-3xl md:text-4xl font-bold mt-2">Optimización de la Evaluación</h3>
+                <p class="max-w-2xl mx-auto text-slate-600 mt-4">Durante la primera fase, nos centramos en agilizar y sistematizar el proceso de evaluación, conectando nuestras herramientas de calificación con el Cuaderno Séneca.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl mb-3">📄</div>
+                    <h4 class="font-bold text-xl mb-2">Plantilla de Evaluación</h4>
+                    <p class="text-slate-600 mb-4">Se elaboró una plantilla en Google Sheets para calcular automáticamente la nota de cada criterio a partir de las actividades evaluables, simplificando el registro.</p>
+                    <a href="https://docs.google.com/spreadsheets/d/19zlThAjbukPEnwVhp-CC8wqRKYO26w8uocDmirAQVaw/copy" target="_blank" class="inline-block bg-teal-600 text-white font-semibold px-4 py-2 rounded-md hover:bg-teal-700 transition">Crear una copia</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 hover:shadow-lg transition-shadow duration-300">
+                     <div class="text-4xl mb-3">⚙️</div>
+                    <h4 class="font-bold text-xl mb-2">Extensión "AutoNotas Séneca"</h4>
+                    <p class="text-slate-600 mb-4">Para un volcado de datos eficiente, usamos esta extensión de Chrome que transfiere las notas desde nuestra plantilla directamente al cuaderno oficial de Séneca.</p>
+                    <a href="https://www.youtube.com/watch?v=tFR2WqaVFBk" target="_blank" class="inline-block bg-slate-700 text-white font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition">Ver Videotutorial</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 2 Section -->
+        <section id="fase2" class="mb-16 md:mb-24 pt-16 -mt-16">
+            <div class="text-center mb-12">
+                <span class="text-teal-600 font-semibold tracking-wider">FASE 2: 2º Y 3º TRIMESTRE</span>
+                <h3 class="text-3xl md:text-4xl font-bold mt-2">Creación de Recursos con IA</h3>
+                 <p class="max-w-3xl mx-auto text-slate-600 mt-4">En la segunda fase, el grupo exploró el potencial de la Inteligencia Artificial. Tras una formación inicial, se utilizaron diversas herramientas para generar materiales didácticos innovadores y a medida.</p>
+            </div>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+                 <div class="md:col-span-1 bg-white p-6 rounded-lg shadow-md border border-slate-200 flex flex-col justify-center items-center text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl mb-3">🚀</div>
+                    <h4 class="font-bold text-xl mb-2">Formación Inicial en IA</h4>
+                    <p class="text-slate-600 mb-4">Comenzamos con una presentación para conocer las principales herramientas y sus posibilidades en educación.</p>
+                    <a href="https://www.canva.com/design/DAGf67RswHc/5HueOSaKJfdA2Kt50nMNWg/view" target="_blank" class="inline-block bg-teal-600 text-white font-semibold px-4 py-2 rounded-md hover:bg-teal-700 transition">Ver Presentación</a>
+                </div>
+                <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md border border-slate-200 flex flex-col justify-center hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="font-bold text-xl mb-4 text-center">Herramientas Exploradas</h4>
+                    <div class="flex flex-wrap justify-center items-center gap-4 text-sm">
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">ChatGPT</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Gemini</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Recraft</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Ideogram</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Suno</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Flux</span>
+                         <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">y más...</span>
+                    </div>
+                     <p class="text-center text-slate-600 mt-6">Estas herramientas nos permitieron crear desde rúbricas y exámenes hasta canciones y cómics. Explora los resultados en la galería.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria" class="pt-16 -mt-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold">Galería de Recursos con IA</h3>
+                <p class="max-w-2xl mx-auto text-slate-600 mt-4">Aquí se muestran algunos de los materiales prácticos generados. Usa los filtros para explorar por categorías y haz clic en cualquier recurso para ver los detalles.</p>
+            </div>
+            
+            <!-- Filters -->
+            <div id="filters" class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="filter-btn active px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-full hover:bg-slate-100 transition-colors duration-200" data-category="all">Todos</button>
+                <button class="filter-btn px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-full hover:bg-slate-100 transition-colors duration-200" data-category="evaluacion">Evaluación</button>
+                <button class="filter-btn px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-full hover:bg-slate-100 transition-colors duration-200" data-category="actividad">Actividades</button>
+                 <button class="filter-btn px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-full hover:bg-slate-100 transition-colors duration-200" data-category="musica">Música</button>
+                <button class="filter-btn px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-full hover:bg-slate-100 transition-colors duration-200" data-category="proyecto">Proyectos</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Gallery items will be injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-24">
+        <div class="container mx-auto px-6 py-4 text-center text-slate-400">
+            <p>&copy; 2025 Grupo de Trabajo | Portafolio de Innovación Educativa</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 hidden">
+        <div class="modal-content bg-white w-full max-w-lg rounded-lg shadow-xl relative max-h-[90vh] overflow-y-auto">
+            <button id="modal-close" class="absolute top-3 right-3 text-slate-500 hover:text-slate-800 text-3xl leading-none font-bold">&times;</button>
+            <div class="p-6 md:p-8">
+                <h2 id="modal-title" class="text-2xl font-bold mb-4 text-slate-800"></h2>
+                <div id="modal-body" class="space-y-4">
+                    <p id="modal-description" class="text-slate-600"></p>
+                </div>
+                 <div class="mt-6 space-y-3">
+                    <a id="modal-link" href="#" target="_blank" class="block w-full text-center bg-teal-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-teal-700 transition">Ver Recurso</a>
+                    <a id="modal-link-2" href="#" target="_blank" class="hidden w-full text-center bg-slate-700 text-white font-semibold px-6 py-3 rounded-md hover:bg-slate-800 transition">Escuchar Música</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data for gallery items with updated Google Drive links
+            const resources = [
+                {
+                    title: 'Rúbrica de Inglés',
+                    description: 'Rúbrica detallada para la evaluación de la comprensión oral y escrita en Inglés, especificando niveles de logro.',
+                    url: 'https://drive.google.com/file/d/1DtSeTW-zatM4Vj8rk-refJJdq9ZUAqBz/view?usp=drive_link',
+                    category: 'evaluacion',
+                    icon: '📝'
+                },
+                {
+                    title: 'Examen de Música (Metrónomo)',
+                    description: 'Examen tipo test sobre el uso y las partes del metrónomo, alineado con criterios de evaluación específicos.',
+                    url: 'https://docs.google.com/document/d/1HAzcgK8MuY5zduVEwftnPF49Ij5P17ac/edit?usp=drive_link&ouid=100190127369102420857&rtpof=true&sd=true',
+                    category: 'evaluacion',
+                    icon: '🎵'
+                },
+                {
+                    title: 'Actividad Cultural Comparativa',
+                    description: 'Actividad visual para comparar y contrastar elementos culturales, como el traje tradicional escocés (Kilt) y el traje de flamenca.',
+                    url: 'https://drive.google.com/file/d/1eICa5Zfn0L95mfc08Yaoi2kUxMpsCOpS/view?usp=drive_link',
+                    category: 'actividad',
+                    icon: '🎭'
+                },
+                {
+                    title: 'Lectura Tematizada: Carnaval',
+                    description: 'Comprensión lectora sobre el Carnaval y su música en diferentes partes del mundo, con preguntas para evaluar la asimilación de contenidos.',
+                    url: 'https://docs.google.com/document/d/1hG4Khs2W8PECJAoyM7_RJXXjC9JgQGWh/edit?usp=drive_link&ouid=100190127369102420857&rtpof=true&sd=true',
+                    category: 'actividad',
+                    icon: '📖'
+                },
+                {
+                    title: 'Ejercicio "Listening" (Lava)',
+                    description: 'Actividad para practicar pronombres en inglés rellenando los huecos de la letra de la canción "Lava" de Disney.',
+                    url: 'https://drive.google.com/file/d/1MEE4us04T1vXVIGO6jsZ5-DUahStP7Al/view?usp=drive_link',
+                    category: 'actividad',
+                    icon: '🎧'
+                },
+                {
+                    title: 'Himno de las Escuolimpiadas',
+                    description: 'Canción personalizada creada con la IA de Suno para las "Escuolimpiadas" de Osuna, fomentando valores como la unidad, el respeto y el esfuerzo.',
+                    url: 'https://drive.google.com/file/d/1_YCF3vhroY7m6hFS2unHMIy7a6sgPmT6/view?usp=drive_link',
+                    url_text: 'Ver Letra',
+                    url2: 'https://drive.google.com/file/d/14PBa5MA9NftJirPI4qrAXEM_FDJS9ynk/view?usp=drive_link',
+                    url2_text: 'Escuchar Música',
+                    category: 'musica',
+                    icon: '🎶'
+                },
+                {
+                    title: 'Cómic Audiovisual',
+                    description: 'La IA se utilizó como herramienta de apoyo para la elaboración de actividades competenciales complejas, como este cómic audiovisual sobre la Prehistoria.',
+                    url: 'https://www.youtube.com/watch?v=JLsRqcpQiCk',
+                    category: 'proyecto',
+                    icon: '🎬'
+                }
+            ];
+
+            const galleryGrid = document.getElementById('gallery-grid');
+            const filtersContainer = document.getElementById('filters');
+            const modal = document.getElementById('modal');
+            const modalCloseBtn = document.getElementById('modal-close');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalLink = document.getElementById('modal-link');
+            const modalLink2 = document.getElementById('modal-link-2');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function renderGallery(filter = 'all') {
+                galleryGrid.innerHTML = '';
+                const filteredResources = resources.filter(res => filter === 'all' || res.category === filter);
+                
+                if(filteredResources.length === 0) {
+                    galleryGrid.innerHTML = `<p class="col-span-full text-center text-slate-500">No hay recursos en esta categoría.</p>`;
+                    return;
+                }
+
+                filteredResources.forEach(res => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item bg-white p-5 rounded-lg shadow-md border border-slate-200 cursor-pointer flex flex-col';
+                    item.dataset.category = res.category;
+                    item.innerHTML = `
+                        <div class="text-4xl mb-4">${res.icon}</div>
+                        <h5 class="font-bold text-lg mb-2 text-slate-800 flex-grow">${res.title}</h5>
+                        <p class="text-sm text-slate-600 line-clamp-3">${res.description}</p>
+                    `;
+                    item.addEventListener('click', () => openModal(res));
+                    galleryGrid.appendChild(item);
+                });
+            }
+
+            function openModal(resource) {
+                modalTitle.textContent = resource.title;
+                modalDescription.textContent = resource.description;
+
+                modalLink.href = resource.url;
+                modalLink.textContent = resource.url_text || 'Ver Recurso';
+
+                if (resource.url2) {
+                    modalLink2.href = resource.url2;
+                    modalLink2.textContent = resource.url2_text || 'Ver Recurso Adicional';
+                    modalLink2.classList.remove('hidden');
+                } else {
+                    modalLink2.classList.add('hidden');
+                }
+
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            filtersContainer.addEventListener('click', (e) => {
+                const button = e.target.closest('.filter-btn');
+                if (button) {
+                    const category = button.dataset.category;
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderGallery(category);
+                }
+            });
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                })
+            });
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+
+            renderGallery();
+        });
+    </script>
+</body>
+</html>
